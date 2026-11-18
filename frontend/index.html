@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Multi-Sport Fitness & Kinematic Assessment System</title>
+    <title>AI Multi-Sport Fitness Assessment System</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,12 +25,7 @@
                     <i class="fa-solid fa-bolt"></i>
                 </div>
                 <h2 class="auth-title">FitPulse AI System</h2>
-                <p class="auth-subtitle">AI Multi-Sport Kinematic Tracking & Biomechanics Engine</p>
-
-                <div class="auth-db-badge" onclick="showAuthDbModal()">
-                    <i class="fa-solid fa-database"></i> Auth DB: <strong>SQLite 3</strong> (<code>users_auth.db</code>)
-                    <i class="fa-solid fa-circle-info" style="margin-left: 4px;"></i>
-                </div>
+                <p class="auth-subtitle">AI Multi-Sport Motion Tracking & Biomechanics Engine</p>
             </div>
 
             <div class="auth-tabs">
@@ -104,35 +99,9 @@
                 </div>
 
                 <button type="submit" class="btn-auth-submit" id="btn-register-submit">
-                    <span>Create Account (Saves to users_auth.db)</span> <i class="fa-solid fa-user-check"></i>
+                    <span>Create Account</span> <i class="fa-solid fa-user-check"></i>
                 </button>
             </form>
-
-            <div class="auth-divider">
-                <span>Or Quick Demo Sign In</span>
-            </div>
-
-            <div class="quick-login-grid">
-                <button class="quick-user-btn" type="button" onclick="quickLogin('alex@example.com', 'password123')">
-                    <div class="avatar-sm">AR</div>
-                    <div>
-                        <div style="font-weight: 700; font-size: 0.85rem;">Alex Rivera</div>
-                        <div style="font-size: 0.72rem; color: var(--text-muted);">alex@example.com</div>
-                    </div>
-                </button>
-                <button class="quick-user-btn" type="button" onclick="quickLogin('sarah@example.com', 'password123')">
-                    <div class="avatar-sm" style="background: linear-gradient(135deg, #10b981, #059669);">SC</div>
-                    <div>
-                        <div style="font-weight: 700; font-size: 0.85rem;">Sarah Chen</div>
-                        <div style="font-size: 0.72rem; color: var(--text-muted);">sarah@example.com</div>
-                    </div>
-                </button>
-            </div>
-
-            <div class="auth-db-info-footer">
-                <i class="fa-solid fa-shield-halved" style="color: var(--primary-accent);"></i>
-                Separate Auth DB: <code>database/users_auth.db</code> | Engine: <code>SQLite 3</code>
-            </div>
         </div>
     </div>
 
@@ -255,8 +224,8 @@
                         <span
                             style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: var(--primary-accent); letter-spacing: 1px;">AI
                             Multi-Sport Motion Intelligence</span>
-                        <h1 class="hero-title">Welcome Back, <span id="dash-greeting-name">Alex Rivera</span></h1>
-                        <p class="hero-subtitle">Kinematic tracking for Gym, Yoga, Basketball shooting, Cricket bowling
+                        <h1 class="hero-title">Welcome, <span id="dash-greeting-name">Alex Rivera</span></h1>
+                        <p class="hero-subtitle">Motion tracking for Gym, Yoga, Basketball shooting, Cricket bowling
                             straightness, and Athletics sprint gait.</p>
                     </div>
                     <div>
@@ -297,12 +266,11 @@
                             </div>
                             <div>
                                 <h4 style="font-size: 1rem;">2. Yoga & Mobility</h4>
-                                <span style="font-size: 0.75rem; color: var(--text-muted);">Tree Pose, Warrior II,
-                                    Cobra</span>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">Suryanamaskara, Tree Pose,
+                                    Warrior II, Cobra</span>
                             </div>
                         </div>
-                        <p style="font-size: 0.8rem; color: var(--text-muted);">Vrksasana balance stability, horizontal
-                            arm horizon alignment, lumbar flex.</p>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">Suryanamaskara salutation flow, Vrksasana balance, horizontal arm horizon, lumbar flex.</p>
                     </div>
 
                     <div class="web-card"
@@ -332,7 +300,7 @@
                                 <i class="fa-solid fa-baseball-bat-ball"></i>
                             </div>
                             <div>
-                                <h4 style="font-size: 1rem;">4. Cricket Kinematics</h4>
+                                <h4 style="font-size: 1rem;">4. Cricket Biomechanics</h4>
                                 <span style="font-size: 0.75rem; color: var(--text-muted);">Batting Stance & Bowling
                                     Straightness</span>
                             </div>
@@ -367,7 +335,7 @@
                     <div>
                         <h2 style="font-size: 1.5rem;" id="sport-assess-title">Gym - Squat Pose Detection</h2>
                         <p style="font-size: 0.85rem; color: var(--text-muted);">MediaPipe 33-landmark pose estimation &
-                            kinematic tracker.</p>
+                            motion tracker.</p>
                     </div>
 
                     <!-- Exercise Dropdown & Mode Badge -->
@@ -440,7 +408,7 @@
             <div id="page-results" class="page-view">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
                     <div>
-                        <h2 style="font-size: 1.5rem;">Multi-Sport Kinematic Scoring</h2>
+                        <h2 style="font-size: 1.5rem;">Multi-Sport Fitness Scoring</h2>
                         <p style="font-size: 0.85rem; color: var(--text-muted);">Weighted 4-factor scoring model: Strength 30%, Flexibility 25%, Balance 20%, Posture 25%.</p>
                     </div>
                     <button class="btn-web-primary" onclick="openAssessmentReportModal()" style="display: flex; align-items: center; gap: 8px;">
@@ -463,17 +431,17 @@
                                 </linearGradient>
                             </defs>
                         </svg>
-                        <div class="score-num-web" style="position: absolute;" id="web-final-score-val">76.5</div>
+                        <div class="score-num-web" style="position: absolute;" id="web-final-score-val">--</div>
                     </div>
                     <div>
                         <span
                             style="font-size: 0.8rem; font-weight: 800; uppercase; color: var(--primary-accent); letter-spacing: 1px;">OVERALL
                             SCORE TIER</span>
                         <h3 style="font-size: 1.8rem; margin: 4px 0 10px; color: var(--emerald-accent);"
-                            id="web-tier-label">Good (Fit Level)</h3>
+                            id="web-tier-label">Ready for Assessment</h3>
                         <p style="font-size: 0.9rem; color: var(--text-muted); max-width: 600px; line-height: 1.5;">
-                            Biomechanical pose analysis confirms solid body stability and execution. Review sub-score
-                            breakdowns below for targeted mobility drills.
+                            Biomechanical pose analysis measures genuine body stability, mobility, and repetition output.
+                            Complete a recording or view your historical progress below.
                         </p>
                     </div>
                 </div>
@@ -483,10 +451,10 @@
                         <div class="card-title">Strength Sub-Score (30% Weight)</div>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
                             <span>Repetition Power Output</span>
-                            <strong id="web-val-strength">70.0%</strong>
+                            <strong id="web-val-strength">--%</strong>
                         </div>
                         <div class="progress-bar-web">
-                            <div class="progress-fill-web" id="web-bar-strength" style="width: 70%;"></div>
+                            <div class="progress-fill-web" id="web-bar-strength" style="width: 0%;"></div>
                         </div>
                     </div>
 
@@ -494,10 +462,10 @@
                         <div class="card-title">Flexibility Sub-Score (25% Weight)</div>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
                             <span>Joint Angle Mobility</span>
-                            <strong id="web-val-flexibility">65.0%</strong>
+                            <strong id="web-val-flexibility">--%</strong>
                         </div>
                         <div class="progress-bar-web">
-                            <div class="progress-fill-web" id="web-bar-flexibility" style="width: 65%;"></div>
+                            <div class="progress-fill-web" id="web-bar-flexibility" style="width: 0%;"></div>
                         </div>
                     </div>
 
@@ -505,10 +473,10 @@
                         <div class="card-title">Balance Sub-Score (20% Weight)</div>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
                             <span>Center of Mass Stability</span>
-                            <strong id="web-val-balance">85.0%</strong>
+                            <strong id="web-val-balance">--%</strong>
                         </div>
                         <div class="progress-bar-web">
-                            <div class="progress-fill-web" id="web-bar-balance" style="width: 85%;"></div>
+                            <div class="progress-fill-web" id="web-bar-balance" style="width: 0%;"></div>
                         </div>
                     </div>
 
@@ -516,10 +484,10 @@
                         <div class="card-title">Posture Sub-Score (25% Weight)</div>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
                             <span>Spinal & Shoulder Alignment</span>
-                            <strong id="web-val-posture">80.0%</strong>
+                            <strong id="web-val-posture">--%</strong>
                         </div>
                         <div class="progress-bar-web">
-                            <div class="progress-fill-web" id="web-bar-posture" style="width: 80%;"></div>
+                            <div class="progress-fill-web" id="web-bar-posture" style="width: 0%;"></div>
                         </div>
                     </div>
                 </div>
@@ -607,60 +575,11 @@
         </main>
     </div>
 
-    <!-- Separate Database Inspection Modal -->
-    <div id="modal-db-info" class="db-modal-overlay hidden" onclick="closeAuthDbModal(event)">
-        <div class="db-modal-card" onclick="event.stopPropagation()">
-            <div class="db-modal-header">
-                <h3><i class="fa-solid fa-database" style="color: var(--primary-accent);"></i> Database Architecture &
-                    Engine Info</h3>
-                <button class="btn-close-modal" onclick="closeAuthDbModal()"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="db-modal-body">
-                <div class="db-info-pill-row">
-                    <div class="info-pill"><span class="pill-lbl">Database Engine</span><strong class="pill-val">SQLite
-                            3</strong></div>
-                    <div class="info-pill"><span class="pill-lbl">File Extension</span><strong
-                            class="pill-val">.db</strong></div>
-                    <div class="info-pill"><span class="pill-lbl">Python Driver</span><strong
-                            class="pill-val">sqlite3</strong></div>
-                </div>
-
-                <div class="db-section-box">
-                    <h4><i class="fa-solid fa-key" style="color: var(--emerald-accent);"></i> 1. Separate User
-                        Authentication Database</h4>
-                    <div class="db-meta-detail">
-                        <div><strong>File Name:</strong> <code>users_auth.db</code></div>
-                        <div><strong>Path:</strong> <code>database/users_auth.db</code></div>
-                        <div><strong>Tables:</strong> <code>UserAuth</code>, <code>LoginAuditLogs</code></div>
-                        <div><strong>Purpose:</strong> Stores user login credentials, hashed passwords, user roles, and
-                            security audit logs.</div>
-                    </div>
-                </div>
-
-                <div class="db-section-box">
-                    <h4><i class="fa-solid fa-dumbbell" style="color: var(--violet-accent);"></i> 2. Main Fitness
-                        Application Database</h4>
-                    <div class="db-meta-detail">
-                        <div><strong>File Name:</strong> <code>fitness_app.db</code></div>
-                        <div><strong>Path:</strong> <code>database/fitness_app.db</code></div>
-                        <div><strong>Tables:</strong> <code>Users</code>, <code>Assessments</code>,
-                            <code>Recommendations</code>, <code>WorkoutPlans</code>
-                        </div>
-                        <div><strong>Purpose:</strong> Stores kinematic tracking scores, 5-sport performance metrics,
-                            and AI recommendations.</div>
-                    </div>
-                </div>
-
-                <div id="live-db-inspect-content" class="live-inspect-box">
-                    <div style="text-align: center; color: var(--text-muted);"><i
-                            class="fa-solid fa-spinner fa-spin"></i> Fetching live database inspection from backend...
-                    </div>
-                </div>
-    <!-- Comprehensive Fitness Kinematic PDF Report Modal -->
+    <!-- Comprehensive Fitness Diagnostic PDF Report Modal -->
     <div id="modal-assessment-report" class="db-modal-overlay hidden" onclick="closeReportModal(event)">
         <div class="db-modal-card" style="max-width: 820px; width: 95%; background: #080d1a; border: 1px solid var(--primary-accent);" onclick="event.stopPropagation()">
             <div class="db-modal-header no-print" style="border-bottom: 1px solid var(--card-border); padding-bottom: 14px;">
-                <h3><i class="fa-solid fa-file-pdf" style="color: var(--primary-accent);"></i> Generated Fitness Kinematic Diagnostic Report</h3>
+                <h3><i class="fa-solid fa-file-pdf" style="color: var(--primary-accent);"></i> Generated Fitness Diagnostic Report</h3>
                 <div style="display: flex; gap: 10px; align-items: center;">
                     <button class="btn-web-primary" onclick="printAssessmentReport()" style="padding: 8px 18px; font-size: 0.85rem; display: flex; align-items: center; gap: 6px;">
                         <i class="fa-solid fa-print"></i> Print / Save as PDF

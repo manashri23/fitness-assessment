@@ -55,7 +55,61 @@ class FitnessScorer:
     @classmethod
     def compute_strength_from_reps(cls, squats, pushups):
         """Estimate strength score (0-100) based on rep counts."""
-        # Baseline benchmarks: 25 squats and 25 pushups = 100% strength score
-        squat_score = min(100.0, (squats / 25.0) * 100.0)
-        pushup_score = min(100.0, (pushups / 25.0) * 100.0)
-        return round((squat_score * 0.5) + (pushup_score * 0.5), 1)
+        squats = max(0, int(squats))
+        pushups = max(0, int(pushups))
+        if squats == 0 and pushups == 0:
+            return 0.0
+        squat_score = min(100.0, (squats / 15.0) * 100.0) if squats > 0 else 0.0
+        pushup_score = min(100.0, (pushups / 15.0) * 100.0) if pushups > 0 else 0.0
+        if squats > 0 and pushups > 0:
+            return round((squat_score * 0.5) + (pushup_score * 0.5), 1)
+        elif squats > 0:
+            return round(squat_score, 1)
+        else:
+            return round(pushup_score, 1)
+
+    @classmethod
+    def compute_exercise_strength(cls, category="gym", exercise="squat", reps=0, squats=0, pushups=0, frames_count=0):
+        """
+        Calculates strength score dynamically based on the exercise performed and actual rep volume.
+        Directly correlates rep count with repetition strength power output.
+        """
+        ex = (exercise or "squat").lower()
+        cat = (category or "gym").lower()
+        reps = max(0, int(reps))
+
+        # Direct squat or pushup exercises
+        if ex == "squat":
+            actual_reps = max(reps, squats)
+            if actual_reps == 0:
+                return 0.0
+            return round(min(100.0, (actual_reps / 12.0) * 100.0), 1)
+
+        elif ex == "pushup":
+            actual_reps = max(reps, pushups)
+            if actual_reps == 0:
+                return 0.0
+            return round(min(100.0, (actual_reps / 12.0) * 100.0), 1)
+
+        elif ex in ["plank", "lunge"]:
+            if reps == 0:
+                return 0.0
+            return round(min(100.0, (reps / 8.0) * 100.0), 1)
+
+        elif cat == "yoga":
+            # Yoga core hold endurance: each hold interval adds endurance strength
+            if reps == 0:
+                return 25.0 if frames_count > 10 else 0.0
+            return round(min(100.0, 30.0 + (reps * 14.0)), 1)
+
+        elif cat in ["basketball", "cricket", "athletics"]:
+            actual_reps = max(reps, squats + pushups)
+            if actual_reps == 0:
+                return 0.0
+            return round(min(100.0, (actual_reps / 8.0) * 100.0), 1)
+
+        # Overall rep total fallback
+        total_reps = max(reps, squats + pushups)
+        if total_reps == 0:
+            return 0.0
+        return round(min(100.0, (total_reps / 12.0) * 100.0), 1)
